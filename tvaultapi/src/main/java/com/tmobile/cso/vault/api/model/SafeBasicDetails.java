@@ -19,6 +19,10 @@ package com.tmobile.cso.vault.api.model;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import io.swagger.annotations.ApiModelProperty;
 
 public class SafeBasicDetails implements Serializable{
@@ -51,6 +55,12 @@ public class SafeBasicDetails implements Serializable{
 	/**
 	 * 
 	 */
+	@NotNull
+	@NotEmpty
+	private String appName;
+	/**
+	 * 
+	 */
 	public SafeBasicDetails() {
 		super();
 	}
@@ -59,23 +69,27 @@ public class SafeBasicDetails implements Serializable{
 	 * @param owner
 	 * @param type
 	 * @param description
+	 * @param appName
 	 */
-	public SafeBasicDetails(String name, String owner, String type, String description) {
+	public SafeBasicDetails(String name, String owner, String type, String description ,String appName) {
 		super();
 		this.name = name;
 		this.owner = owner;
 		this.type = type;
 		this.description = description;
+		this.appName = appName;
 	}
 	
 	
-	public SafeBasicDetails(String name, String owner, String type, String description, String ownerid) {
+	public SafeBasicDetails(String name, String owner, String type, String description, String ownerid,
+			String appName) {
 		super();
 		this.name = name;
 		this.owner = owner;
 		this.type = type;
 		this.description = description;
 		this.ownerid = ownerid;
+		this.appName = appName;
 	}
 	/**
 	 * @return the name
@@ -141,6 +155,19 @@ public class SafeBasicDetails implements Serializable{
 	 */
 	public void setOwnerid(String ownerid) {
 		this.ownerid = ownerid;
+	}
+	/**
+	 * @return the appName
+	 */
+	@ApiModelProperty(example="T-Vault")
+	public String getAppName() {
+		return appName;
+	}
+	/**
+	 * @param appName the appName to set
+	 */
+	public void setAppName(String appName) {
+		this.appName = appName;
 	}
 	
 

@@ -1503,10 +1503,12 @@ public final class ControllerUtil {
 		String sdbOwner = safeBasicDetails.getOwner();
 		String sdbDescription = safeBasicDetails.getDescription();
 		String path = safe.getPath();
+		String appName=safeBasicDetails.getAppName();
 		if (StringUtils.isEmpty(sdbName) 
 				|| StringUtils.isEmpty(sdbOwner) 
 				|| StringUtils.isEmpty(sdbDescription) 
 				|| StringUtils.isEmpty(path) 
+				|| StringUtils.isEmpty(appName)
 				) {
 			return false;
 		}

@@ -159,8 +159,8 @@ public class SelfSupportControllerTest {
     }
 
     @Test
-    public void test_createSafe() throws Exception {
-        SafeBasicDetails safeBasicDetails = new SafeBasicDetails("mysafe01", "youremail@yourcompany.com", null, "My first safe");
+    public void testcreateSafe() throws Exception {
+        SafeBasicDetails safeBasicDetails = new SafeBasicDetails("mysafe01", "youremail@yourcompany.com", null, "My first safe","T-Vault");
         Safe safe = new Safe("shared/mysafe01",safeBasicDetails);
 
         String inputJson =new ObjectMapper().writeValueAsString(safe);
@@ -192,8 +192,8 @@ public class SelfSupportControllerTest {
     }
 
     @Test
-    public void test_updateSafe() throws Exception {
-        SafeBasicDetails safeBasicDetails = new SafeBasicDetails("mysafe01", "youremail@yourcompany.com", null, "My first safe");
+    public void testupdateSafe() throws Exception {
+        SafeBasicDetails safeBasicDetails = new SafeBasicDetails("mysafe01", "youremail@yourcompany.com", null, "My first safe","T-Vault");
         Safe safe = new Safe("shared/mysafe01",safeBasicDetails);
 
         String inputJson =new ObjectMapper().writeValueAsString(safe);
